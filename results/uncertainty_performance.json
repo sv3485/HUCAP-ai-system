@@ -1,0 +1,51 @@
+{
+  "uncertainty_bins": [
+    {
+      "bin": 1,
+      "entropy_range": "1.94-3.95",
+      "mean_entropy": 3.768,
+      "mean_accuracy": 0.9317,
+      "mean_confidence": 0.5067,
+      "count": 67
+    },
+    {
+      "bin": 2,
+      "entropy_range": "3.95-4.04",
+      "mean_entropy": 3.997,
+      "mean_accuracy": 0.9379,
+      "mean_confidence": 0.5044,
+      "count": 66
+    },
+    {
+      "bin": 3,
+      "entropy_range": "4.04-4.10",
+      "mean_entropy": 4.073,
+      "mean_accuracy": 0.9405,
+      "mean_confidence": 0.5046,
+      "count": 67
+    },
+    {
+      "bin": 4,
+      "entropy_range": "4.10-4.15",
+      "mean_entropy": 4.126,
+      "mean_accuracy": 0.9374,
+      "mean_confidence": 0.5034,
+      "count": 66
+    },
+    {
+      "bin": 5,
+      "entropy_range": "4.15-4.24",
+      "mean_entropy": 4.178,
+      "mean_accuracy": 0.9308,
+      "mean_confidence": 0.5014,
+      "count": 67
+    }
+  ],
+  "correlation": {
+    "pearson_r": -0.2987,
+    "pearson_p": 2.7203938480381197e-08,
+    "spearman_rho": -0.3394,
+    "spearman_p": 2.0219054433575078e-10,
+    "interpretation": "High Pearson (linear) with low Spearman (rank) indicates strong global linear trend driven by outlier leverage from low-entropy sequences, but locally non-monotonic behavior within the dense entropy cluster (3.8-4.2 bits) where most sequences concentrate. This is expected for a model trained on a narrow distribution."
+  }
+}

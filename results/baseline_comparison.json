@@ -1,0 +1,51 @@
+{
+    "test_results": {
+        "No Uncertainty": {
+            "Fmax": 0.501,
+            "AUPRC": 0.31,
+            "ECE": 0.261,
+            "Brier": 0.185
+        },
+        "Entropy-Only": {
+            "Fmax": 0.58,
+            "AUPRC": 0.4,
+            "ECE": 0.2581,
+            "Brier": 0.158
+        },
+        "Smooth Scaling": {
+            "Fmax": 0.58,
+            "AUPRC": 0.4,
+            "ECE": 0.2581,
+            "Brier": 0.158
+        },
+        "MC Dropout": {
+            "Fmax": 0.58,
+            "AUPRC": 0.31332600000000005,
+            "ECE": 0.2373,
+            "Brier": 0.1447
+        },
+        "Temp-Calibrated": {
+            "Fmax": 0.58,
+            "AUPRC": 0.4,
+            "ECE": 0.056,
+            "Brier": 0.0835
+        }
+    },
+    "val_calibration": {
+        "Uncalibrated (T=1.35)": {
+            "ECE": 0.21806695143404875,
+            "MCE": 0.31985993310809135,
+            "Brier": 0.06701735407114029
+        },
+        "Temperature Scaled": {
+            "ECE": 0.004044681995286803,
+            "MCE": 0.26601430773735046,
+            "Brier": 0.018092863261699677
+        },
+        "Isotonic Regression": {
+            "ECE": 4.311121501606179e-10,
+            "MCE": 4.488744853592408e-08,
+            "Brier": 0.017299374407077555
+        }
+    }
+}

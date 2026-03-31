@@ -1,0 +1,16 @@
+{
+  "CAFA_Fmax": 0.425448,
+  "Per_Protein_Avg_Fmax": 0.415115,
+  "Micro_Averaged_Fmax": 0.395349,
+  "AUPRC": 0.253527,
+  "Micro_F1": 0.395349,
+  "Macro_F1": 0.013256,
+  "Precision_at_3": 0.191191,
+  "Precision_at_5": 0.124325,
+  "Precision_at_10": 0.067868,
+  "Optimal_Threshold": 0.349,
+  "Test_Samples": 333,
+  "GO_Terms": 61,
+  "Model": "facebook/esm2_t12_35M_UR50D",
+  "Parameters": "33.8M"
+}

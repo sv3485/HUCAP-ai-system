@@ -1,0 +1,58 @@
+# .gitignore
+# Node
+node_modules/
+dist/
+build/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+venv.bak/
+
+# Environment variables
+.env
+.env.local
+.env.production.local
+
+# ML Models and Data (Too large for GitHub)
+models/
+*.pt
+*.pth
+*.bin
+*.pt.swp
+*.h5
+*.hdf5
+*.onnx
+
+# Datasets and outputs
+data/
+datasets/
+outputs/
+*.csv
+*.tsv
+*.xlsx
+*.gaf
+*.fasta
+*.zip
+*.gz
+cafa-6-protein-function-prediction*/
+
+# IDE 
+.vscode/
+.idea/
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Keep results/ JSON files tracked for production dashboard
+# (they are small and needed by /metrics, /benchmarks, /accuracy_stats endpoints)
+# results/  <-- intentionally NOT ignored
+
+# Deployment
+.vercel/

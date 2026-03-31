@@ -1,0 +1,244 @@
+{
+  "top_false_positives": [
+    {
+      "protein_id": "O61016",
+      "predicted_term": "GO:0005515",
+      "confidence": 0.5183,
+      "sequence_length": 151,
+      "entropy": 3.063,
+      "seq_type": "low_complexity"
+    },
+    {
+      "protein_id": "O96790",
+      "predicted_term": "GO:0005515",
+      "confidence": 0.5176,
+      "sequence_length": 351,
+      "entropy": 4.069,
+      "seq_type": "structured"
+    },
+    {
+      "protein_id": "G1TDB3",
+      "predicted_term": "GO:0005515",
+      "confidence": 0.5163,
+      "sequence_length": 124,
+      "entropy": 3.742,
+      "seq_type": "low_complexity"
+    },
+    {
+      "protein_id": "P0A0R3",
+      "predicted_term": "GO:0005515",
+      "confidence": 0.5139,
+      "sequence_length": 118,
+      "entropy": 3.947,
+      "seq_type": "structured"
+    },
+    {
+      "protein_id": "O24413",
+      "predicted_term": "GO:0005515",
+      "confidence": 0.513,
+      "sequence_length": 120,
+      "entropy": 3.833,
+      "seq_type": "medium_complexity"
+    },
+    {
+      "protein_id": "A0A6G9KHD3",
+      "predicted_term": "GO:0005515",
+      "confidence": 0.5123,
+      "sequence_length": 37,
+      "entropy": 3.525,
+      "seq_type": "low_complexity"
+    },
+    {
+      "protein_id": "Q75L34",
+      "predicted_term": "GO:0005515",
+      "confidence": 0.5122,
+      "sequence_length": 502,
+      "entropy": 3.972,
+      "seq_type": "structured"
+    },
+    {
+      "protein_id": "O73694",
+      "predicted_term": "GO:0005515",
+      "confidence": 0.512,
+      "sequence_length": 59,
+      "entropy": 3.81,
+      "seq_type": "medium_complexity"
+    },
+    {
+      "protein_id": "P00939",
+      "predicted_term": "GO:0005515",
+      "confidence": 0.5119,
+      "sequence_length": 249,
+      "entropy": 4.084,
+      "seq_type": "structured"
+    },
+    {
+      "protein_id": "P56428",
+      "predicted_term": "GO:0005515",
+      "confidence": 0.5113,
+      "sequence_length": 594,
+      "entropy": 4.064,
+      "seq_type": "structured"
+    }
+  ],
+  "top_false_negatives": [
+    {
+      "protein_id": "Q26710",
+      "missed_term": "GO:0016491",
+      "raw_prob": 0.3488,
+      "entropy": 4.143
+    },
+    {
+      "protein_id": "P9WGL9",
+      "missed_term": "GO:0003677",
+      "raw_prob": 0.3481,
+      "entropy": 3.908
+    },
+    {
+      "protein_id": "Q01526",
+      "missed_term": "GO:0003677",
+      "raw_prob": 0.3443,
+      "entropy": 4.008
+    },
+    {
+      "protein_id": "P86937",
+      "missed_term": "GO:0003677",
+      "raw_prob": 0.3433,
+      "entropy": 4.202
+    },
+    {
+      "protein_id": "Q40359",
+      "missed_term": "GO:0003677",
+      "raw_prob": 0.3424,
+      "entropy": 4.178
+    },
+    {
+      "protein_id": "B2LXS7",
+      "missed_term": "GO:0003677",
+      "raw_prob": 0.3411,
+      "entropy": 4.057
+    },
+    {
+      "protein_id": "Q10749",
+      "missed_term": "GO:0008233",
+      "raw_prob": 0.3069,
+      "entropy": 4.217
+    },
+    {
+      "protein_id": "Q40983",
+      "missed_term": "GO:0046872",
+      "raw_prob": 0.3038,
+      "entropy": 4.128
+    },
+    {
+      "protein_id": "U3KRF2",
+      "missed_term": "GO:0046872",
+      "raw_prob": 0.2989,
+      "entropy": 4.11
+    },
+    {
+      "protein_id": "P9WNZ5",
+      "missed_term": "GO:0046872",
+      "raw_prob": 0.2956,
+      "entropy": 4.07
+    }
+  ],
+  "top_error_terms": [
+    {
+      "term": "GO:0000287",
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 13,
+      "support": 13,
+      "error_rate": 1.0
+    },
+    {
+      "term": "GO:0000976",
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 4,
+      "support": 4,
+      "error_rate": 1.0
+    },
+    {
+      "term": "GO:0001217",
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 2,
+      "support": 2,
+      "error_rate": 1.0
+    },
+    {
+      "term": "GO:0003690",
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "support": 1,
+      "error_rate": 1.0
+    },
+    {
+      "term": "GO:0003700",
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 5,
+      "support": 5,
+      "error_rate": 1.0
+    },
+    {
+      "term": "GO:0003723",
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 3,
+      "support": 3,
+      "error_rate": 1.0
+    },
+    {
+      "term": "GO:0003735",
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 7,
+      "support": 7,
+      "error_rate": 1.0
+    },
+    {
+      "term": "GO:0004175",
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 3,
+      "support": 3,
+      "error_rate": 1.0
+    },
+    {
+      "term": "GO:0004252",
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 2,
+      "support": 2,
+      "error_rate": 1.0
+    },
+    {
+      "term": "GO:0004497",
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 8,
+      "support": 8,
+      "error_rate": 1.0
+    }
+  ],
+  "error_by_sequence_type": {
+    "structured": {
+      "total": 300,
+      "errors": 1166
+    },
+    "low_complexity": {
+      "total": 24,
+      "errors": 104
+    },
+    "medium_complexity": {
+      "total": 9,
+      "errors": 38
+    }
+  },
+  "total_fp": 1069,
+  "total_fn_structured": 212
+}
