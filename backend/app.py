@@ -209,16 +209,16 @@ def load_checkpoint() -> Dict[str, Any]:
     use_fallback = False
 
     # ── Production Model Download ─────────────────────────────
+    print("ENV REPO:", os.getenv("HUCAP_HF_REPO"))
     HF_REPO = os.getenv("HUCAP_HF_REPO", "vivek2233/hucap-model")
     try:
         from huggingface_hub import hf_hub_download
         
-        print("Loading model from:", HF_REPO)
         ckpt_path = hf_hub_download(
             repo_id=HF_REPO,
             filename="protein_transformer_multitask.pt"
         )
-        print("Model path:", ckpt_path)
+        print("Downloaded model path:", ckpt_path)
         
     except Exception as e:
         logger.error("HuggingFace download failed: %s", e)
@@ -409,6 +409,7 @@ def health():
         load_checkpoint()
         model_loaded = True
     except Exception as e:
+        print("MODEL LOAD ERROR:", str(e))
         logger.error("Health check failed: %s", e)
         model_loaded = False
         
