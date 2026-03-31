@@ -208,51 +208,26 @@ def load_checkpoint() -> Dict[str, Any]:
     fallback_path = os.path.join(project_root, "models", "protein_transformer_F.pt")
     use_fallback = False
 
-    # ── Production Model Download Strategies ─────────────────────────────
-    if not os.path.exists(ckpt_path) and not os.path.exists(fallback_path):
-        os.makedirs(os.path.dirname(ckpt_path), exist_ok=True)
-
-        # Strategy 1: HuggingFace Hub (preferred — supports LFS, resumable)
-        hf_repo = os.environ.get("HUCAP_HF_REPO")  # e.g., "sv3485/hucap-model"
-        hf_filename = os.environ.get("HUCAP_HF_FILENAME", "protein_transformer_multitask.pt")
-        if hf_repo:
-            try:
-                from huggingface_hub import hf_hub_download
-                logger.info("Downloading model from HuggingFace Hub: %s/%s", hf_repo, hf_filename)
-                downloaded_path = hf_hub_download(
-                    repo_id=hf_repo,
-                    filename=hf_filename,
-                    local_dir=os.path.dirname(ckpt_path),
-                    local_dir_use_symlinks=False,
-                )
-                # hf_hub_download may put the file in a subdir, move if needed
-                if downloaded_path != ckpt_path and os.path.exists(downloaded_path):
-                    import shutil
-                    shutil.move(downloaded_path, ckpt_path)
-                logger.info("HuggingFace model download complete.")
-            except Exception as e:
-                logger.error("HuggingFace download failed: %s", e)
-
-        # Strategy 2: Direct URL download (fallback)
-        if not os.path.exists(ckpt_path):
-            remote_url = os.environ.get("HUCAP_MODEL_URL")
-            if remote_url:
-                try:
-                    logger.info("Downloading model from URL: %s", remote_url)
-                    urllib.request.urlretrieve(remote_url, ckpt_path)
-                    logger.info("Model download complete (%.1f MB).", os.path.getsize(ckpt_path) / 1e6)
-                except Exception as e:
-                    logger.error("URL download failed: %s", e)
-            else:
-                logger.warning("No model source configured. Set HUCAP_HF_REPO or HUCAP_MODEL_URL.")
-
-    if not os.path.exists(ckpt_path):
+    # ── Production Model Download ─────────────────────────────
+    HF_REPO = os.getenv("HUCAP_HF_REPO", "vivek2233/hucap-model")
+    try:
+        from huggingface_hub import hf_hub_download
+        
+        print("Loading model from:", HF_REPO)
+        ckpt_path = hf_hub_download(
+            repo_id=HF_REPO,
+            filename="protein_transformer_multitask.pt"
+        )
+        print("Model path:", ckpt_path)
+        
+    except Exception as e:
+        logger.error("HuggingFace download failed: %s", e)
         if os.path.exists(fallback_path):
             ckpt_path = fallback_path
             use_fallback = True
         else:
             raise FileNotFoundError(
-                "Model checkpoint not found. Set HUCAP_HF_REPO or HUCAP_MODEL_URL environment variable."
+                "Model checkpoint not found. Ensure HUCAP_HF_REPO is correct."
             )
 
     device = get_device()
@@ -432,10 +407,15 @@ def root():
 def health():
     try:
         load_checkpoint()
-        return {"status": "ok", "model_loaded": True}
+        model_loaded = True
     except Exception as e:
         logger.error("Health check failed: %s", e)
-        return {"status": "error", "model_loaded": False}
+        model_loaded = False
+        
+    return {
+        "status": "ok" if model_loaded else "error",
+        "model_loaded": model_loaded
+    }
 
 
 @app.get("/metrics", response_model=MetricsResponse)
