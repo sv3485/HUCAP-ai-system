@@ -3,11 +3,14 @@
 import json
 import logging
 import os
+import sys
 import time
 import traceback
 import urllib.request
 from functools import lru_cache
 from typing import Any, Dict, List, Optional
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 # ── Production Logging Setup ─────────────────────────────────────────────────
 logging.basicConfig(
