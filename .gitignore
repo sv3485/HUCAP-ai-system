@@ -18,9 +18,8 @@ venv.bak/
 .env.local
 .env.production.local
 
-# ML Models and Data (Too large for GitHub)
-models/
-*.pt
+# ML Models and Data (Too large for GitHub without Git LFS)
+# Note: Models folder and .pt files are tracked using Git LFS
 *.pth
 *.bin
 *.pt.swp
