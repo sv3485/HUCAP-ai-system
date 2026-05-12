@@ -1,0 +1,41 @@
+# Data source: "cafa" (original) or "swissprot_gaf" (new datasets)
+data_source: "swissprot_gaf"
+
+# --- CAFA-6 settings (used when data_source = "cafa") ---
+dataset_root: "cafa-6-protein-function-prediction (1)"
+
+# --- Swiss-Prot + GAF settings (used when data_source = "swissprot_gaf") ---
+fasta_path: "cafa-6-protein-function-prediction (1)/Train/train_sequences.fasta"
+gaf_path: "filtered_goa_uniprot_all_noiea.gaf"
+
+# General data settings
+aspect: "F"
+max_seq_len: 1024
+min_term_frequency: 20
+val_ratio: 0.15
+test_ratio: 0.15
+
+# Sequence filtering
+min_seq_len: 30
+max_seq_len_filter: 2000
+max_go_terms_per_protein: 50
+top_n_go_terms: 400
+
+# Training cap (set higher for better accuracy, lower for faster training)
+max_train_samples: 100000
+
+train:
+  batch_size: 16
+  gradient_accumulation_steps: 1
+  num_epochs: 10
+  learning_rate: 0.0001
+  weight_decay: 0.01
+  num_workers: 0
+  random_seed: 42
+  label_smoothing: 0.02
+  gradient_clipping: true
+  mixed_precision: true
+
+model:
+  embedding_dim: 64
+  dropout: 0.3

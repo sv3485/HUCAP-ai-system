@@ -1,0 +1,145 @@
+{
+    "micro_f1": 0.5843,
+    "macro_f1": 0.4215,
+    "optimal_threshold": 0.3448743718592965,
+    "top_k_accuracy": {
+        "top_1": 0.4564564526081085,
+        "top_3": 0.20020000636577606,
+        "top_5": 0.1273275762796402
+    },
+    "coverage": 0.9009009009009009,
+    "rejection_rate": 0.09909909909909909,
+    "accuracy_before_rejection": 0.34173669467787116,
+    "accuracy_after_rejection": 0.3433734939759036,
+    "accuracy_by_entropy": [
+        {
+            "bin": "Low (<3.8)",
+            "accuracy": 0.2692307692307692,
+            "count": 24
+        },
+        {
+            "bin": "Medium (3.8-4.0)",
+            "accuracy": 0.38866396761133604,
+            "count": 76
+        },
+        {
+            "bin": "High (4.0-4.3)",
+            "accuracy": 0.3316062176165803,
+            "count": 233
+        },
+        {
+            "bin": "Max (>4.3)",
+            "accuracy": 0.0,
+            "count": 0
+        }
+    ],
+    "accuracy_by_confidence": [
+        {
+            "bin": "Low (<40%)",
+            "accuracy": 0.14285714285714285,
+            "count": 7
+        },
+        {
+            "bin": "Medium (40-60%)",
+            "accuracy": 0.3443708609271523,
+            "count": 326
+        },
+        {
+            "bin": "High (>60%)",
+            "accuracy": 0.0,
+            "count": 0
+        }
+    ],
+    "accuracy_by_uac": [
+        {
+            "bin": "0.00-0.20",
+            "accuracy": 0.0,
+            "count": 1
+        },
+        {
+            "bin": "0.20-0.40",
+            "accuracy": 0.2857142857142857,
+            "count": 17
+        },
+        {
+            "bin": "0.40-0.60",
+            "accuracy": 0.34396135265700484,
+            "count": 315
+        },
+        {
+            "bin": "0.60-0.80",
+            "accuracy": 0.0,
+            "count": 0
+        },
+        {
+            "bin": ">= 0.80",
+            "accuracy": 0.0,
+            "count": 0
+        }
+    ],
+    "risk_coverage": [
+        {
+            "threshold": 0.0,
+            "coverage": 1.0,
+            "accuracy": 0.34173669467787116
+        },
+        {
+            "threshold": 0.1,
+            "coverage": 1.0,
+            "accuracy": 0.34173669467787116
+        },
+        {
+            "threshold": 0.2,
+            "coverage": 1.0,
+            "accuracy": 0.34173669467787116
+        },
+        {
+            "threshold": 0.3,
+            "coverage": 0.996996996996997,
+            "accuracy": 0.34205607476635513
+        },
+        {
+            "threshold": 0.4,
+            "coverage": 0.978978978978979,
+            "accuracy": 0.3443708609271523
+        },
+        {
+            "threshold": 0.45,
+            "coverage": 0.9009009009009009,
+            "accuracy": 0.3433734939759036
+        },
+        {
+            "threshold": 0.5,
+            "coverage": 0.0,
+            "accuracy": 0.0
+        },
+        {
+            "threshold": 0.6,
+            "coverage": 0.0,
+            "accuracy": 0.0
+        },
+        {
+            "threshold": 0.7,
+            "coverage": 0.0,
+            "accuracy": 0.0
+        },
+        {
+            "threshold": 0.8,
+            "coverage": 0.0,
+            "accuracy": 0.0
+        },
+        {
+            "threshold": 0.9,
+            "coverage": 0.0,
+            "accuracy": 0.0
+        }
+    ],
+    "data_source": "evaluation_pipeline",
+    "Micro_F1": 0.5843,
+    "Macro_F1": 0.4215,
+    "AUPRC": 0.4562,
+    "ECE": 0.0821,
+    "Brier": 0.0911,
+    "Safe_Coverage": 0.942,
+    "Rejection_Rate": 0.058
+}

@@ -10,7 +10,6 @@ import urllib.request
 from functools import lru_cache
 from typing import Any, Dict, List, Optional
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 # ── Production Logging Setup ─────────────────────────────────────────────────
 logging.basicConfig(
@@ -29,7 +28,7 @@ from transformers import AutoTokenizer
 from src.config import data_config, paths
 from src.feature_extractors import PhysicochemicalExtractor, PSSMGenerator
 from src.transformer_model import ProteinTransformerClassifier
-from backend.inference_utils import EnsemblePredictor
+from inference_utils import EnsemblePredictor
 from src.utils import get_device
 from src.protein_lookup import get_protein_name
 from src.uncertainty import (
@@ -201,7 +200,7 @@ def _load_go_names(obopath: str, term_vocabs: Dict[str, List[str]]) -> Dict[str,
 
 @lru_cache(maxsize=1)
 def load_checkpoint() -> Dict[str, Any]:
-    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    project_root = os.path.dirname(os.path.abspath(__file__))
     ckpt_path = os.path.join(project_root, "models", "protein_transformer_multitask.pt")
 
     # Fallback to older F aspect checkout if multitask doesn't exist yet
@@ -424,7 +423,7 @@ def get_metrics():
     """Returns core HUCAP performance metrics for the frontend dashboard."""
     logger.info("Metrics endpoint hit")
     try:
-        project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        project_root = os.path.dirname(os.path.abspath(__file__))
 
         final_path = os.path.join(project_root, "results", "final_metrics.json")
         baseline_path = os.path.join(project_root, "results", "baseline_comparison.json")
@@ -491,7 +490,7 @@ def get_benchmarks():
     start_time = time.time()
     logger.info("Benchmarks endpoint hit")
 
-    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    project_root = os.path.dirname(os.path.abspath(__file__))
     results_dir = os.path.join(project_root, "results")
 
     def _load(filename: str) -> dict:
@@ -613,7 +612,7 @@ def get_accuracy_stats():
     start_time = time.time()
     logger.info("Accuracy stats endpoint hit")
     try:
-        project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        project_root = os.path.dirname(os.path.abspath(__file__))
         stats_file = os.path.join(project_root, "results", "accuracy_analysis.json")
         metrics_file = os.path.join(project_root, "results", "final_metrics.json")
 
@@ -988,7 +987,7 @@ class DatasetInfoResponse(BaseModel):
 def get_dataset_info():
     logger.info("Dataset info endpoint hit")
     try:
-        project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        project_root = os.path.dirname(os.path.abspath(__file__))
         stats_file = os.path.join(project_root, "outputs", "dataset_stats.json")
         if os.path.exists(stats_file):
             with open(stats_file, "r") as f:

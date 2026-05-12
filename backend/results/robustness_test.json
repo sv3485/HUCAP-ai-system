@@ -1,0 +1,86 @@
+{
+  "mutation_robustness": {
+    "5%": {
+      "mean_confidence": 0.5036,
+      "mean_change": 0.001,
+      "drop_from_baseline": 0.0006
+    },
+    "10%": {
+      "mean_confidence": 0.5032,
+      "mean_change": 0.0014,
+      "drop_from_baseline": 0.001
+    },
+    "20%": {
+      "mean_confidence": 0.5019,
+      "mean_change": 0.003,
+      "drop_from_baseline": 0.0023
+    },
+    "30%": {
+      "mean_confidence": 0.5007,
+      "mean_change": 0.0038,
+      "drop_from_baseline": 0.0035
+    }
+  },
+  "truncation_robustness": {
+    "75%_kept": {
+      "mean_confidence": 0.5036,
+      "drop_from_baseline": 0.0006
+    },
+    "50%_kept": {
+      "mean_confidence": 0.5033,
+      "drop_from_baseline": 0.001
+    },
+    "25%_kept": {
+      "mean_confidence": 0.5052,
+      "drop_from_baseline": -0.001
+    }
+  },
+  "synthetic_lc": [
+    {
+      "name": "Poly-Q",
+      "entropy": -0.0,
+      "complexity": 0.002,
+      "seq_type": "low_complexity",
+      "uncertainty": "HIGH",
+      "top_confidence": 0.5385
+    },
+    {
+      "name": "Poly-Ala",
+      "entropy": -0.0,
+      "complexity": 0.002,
+      "seq_type": "low_complexity",
+      "uncertainty": "HIGH",
+      "top_confidence": 0.5259
+    },
+    {
+      "name": "AG-repeat",
+      "entropy": 1.0,
+      "complexity": 0.166,
+      "seq_type": "low_complexity",
+      "uncertainty": "HIGH",
+      "top_confidence": 0.5398
+    },
+    {
+      "name": "AGAG-repeat",
+      "entropy": 1.0,
+      "complexity": 0.166,
+      "seq_type": "low_complexity",
+      "uncertainty": "HIGH",
+      "top_confidence": 0.5398
+    },
+    {
+      "name": "Binary-AQ",
+      "entropy": 0.994,
+      "complexity": 0.174,
+      "seq_type": "low_complexity",
+      "uncertainty": "HIGH",
+      "top_confidence": 0.5338
+    }
+  ],
+  "stability_summary": {
+    "baseline_mean_conf": 0.5042,
+    "max_conf_drop_mutation": 0.0035,
+    "max_conf_drop_truncation": 0.001,
+    "synthetic_all_flagged": true
+  }
+}

@@ -1,0 +1,66 @@
+{
+    "wilcoxon_tests": [
+        {
+            "comparison": "Uncalibrated vs Temperature",
+            "wilcoxon_stat": 53400.0,
+            "p_value": 0.0,
+            "significance": "***",
+            "mean_improvement": 0.214024,
+            "cohens_d": 5.3991
+        },
+        {
+            "comparison": "Uncalibrated vs Isotonic",
+            "wilcoxon_stat": 33633.0,
+            "p_value": 0.0,
+            "significance": "***",
+            "mean_improvement": 0.21632,
+            "cohens_d": 4.9852
+        },
+        {
+            "comparison": "Temperature vs Isotonic",
+            "wilcoxon_stat": 4005641.0,
+            "p_value": 0.0,
+            "significance": "***",
+            "mean_improvement": 0.002296,
+            "cohens_d": 0.1682
+        }
+    ],
+    "paired_ttests": [
+        {
+            "comparison": "Uncalibrated vs Temperature",
+            "t_stat": 769.481,
+            "p_value": 0.0,
+            "significance": "***"
+        },
+        {
+            "comparison": "Uncalibrated vs Isotonic",
+            "t_stat": 710.4869,
+            "p_value": 0.0,
+            "significance": "***"
+        },
+        {
+            "comparison": "Temperature vs Isotonic",
+            "t_stat": 23.9691,
+            "p_value": 3.1978972328714545e-125,
+            "significance": "***"
+        }
+    ],
+    "bootstrap_ece_ci": {
+        "Uncalibrated": {
+            "mean_ece": 0.2176,
+            "ci_95_lower": 0.2159,
+            "ci_95_upper": 0.2195
+        },
+        "Temperature": {
+            "mean_ece": 0.0036,
+            "ci_95_lower": 0.0023,
+            "ci_95_upper": 0.0052
+        },
+        "Isotonic": {
+            "mean_ece": 0.0019,
+            "ci_95_lower": 0.0008,
+            "ci_95_upper": 0.0032
+        }
+    },
+    "n_samples": 7048
+}
